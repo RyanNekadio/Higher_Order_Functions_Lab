@@ -14,7 +14,7 @@ ScranAdvisor.prototype.countRestaurants = function() {
 }
 
 ScranAdvisor.prototype.findRestaurant = function(restaurantName){
-    return this.restaurants.find((restaurant) => restaurant.name === restaurantName);
+    return this.restaurants.find(restaurant => restaurant.name === restaurantName);
 };
 
 ScranAdvisor.prototype.allRestaurantNames = function(){
@@ -23,6 +23,11 @@ ScranAdvisor.prototype.allRestaurantNames = function(){
 
 ScranAdvisor.prototype.findRestaurantByCity = function(city){
     return this.restaurants.filter(restaurant => restaurant.location.town === city);
+}
+
+// EXTENSION TASK
+ScranAdvisor.prototype.searchByName = function(substring){
+    return this.restaurants.filter(restaurant => restaurant.name.toLowerCase().includes(substring.toLowerCase()));
 }
 
 module.exports = ScranAdvisor;
